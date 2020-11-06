@@ -3,7 +3,7 @@ import { jsx, Container } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Menu, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
-import { SearchForm } from '../search'
+import { SearchForm, SearchModal } from '../search'
 import {
   Box,
   Flex,
@@ -44,6 +44,7 @@ export const Header = () => {
     // </header>
     <Box className="header" as="header" py={4} bg="bgHeader" sx={{}}>
       <Flex maxWidth={1200} ml="auto" mr="auto" justifyContent="space-between">
+        {search && <SearchModal />}
         <SiteBranding title={title} />
       </Flex>
       <ColorSwitch

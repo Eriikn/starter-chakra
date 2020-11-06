@@ -1,14 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button } from 'grommet'
 import { Search as SearchIcon, FormClose } from 'grommet-icons'
-import { useDisclosure, Drawer, Flex, Box } from '@chakra-ui/core'
+import { Icon, Input, Box, Button, Flex } from '@chakra-ui/core'
+
 import { SearchQueries } from './index'
 
 export const SearchForm = (props) => {
   const [value, setValue] = useState('')
   const [search, setSearch] = useState('')
-  const { isOpen, onOpen, onClose, onToggle } = useDisclosure()
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -27,14 +26,11 @@ export const SearchForm = (props) => {
   return (
     <div {...props}>
       <div>
-        <Button
-          a11yTitle="Search here"
-          focusIndicator={false}
-          icon={<SearchIcon />}
-        />
-
         <div className="search-box">
-          <input
+          <Input
+            variant="flushed"
+            size="sm"
+            width="300px"
             value={value}
             type="search"
             onChange={handleChange}
