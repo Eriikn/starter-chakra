@@ -1,18 +1,21 @@
 import React from 'react'
 import { Header } from './header'
 import { Footer } from './footer'
-import 'normalize.css'
+import { useTheme, ChakraProvider } from '@chakra-ui/core'
+import { customTheme } from 'theme'
+
+// import 'normalize.css'
 // import '../styles/globalstyles.scss'
 import '../styles/wp-styles/styles.scss'
-import { CSSReset } from '@chakra-ui/core'
 
 export const Layout = ({ children }) => {
+  console.log('theme', useTheme())
+
   return (
-    <div>
-      <CSSReset />
+    <ChakraProvider theme={customTheme}>
       <Header />
       <main>{children}</main>
       <Footer />
-    </div>
+    </ChakraProvider>
   )
 }

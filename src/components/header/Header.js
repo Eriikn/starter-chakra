@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import { jsx, Container } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Menu, SiteBranding } from './index'
 import { useThemeOptions } from 'gatsby-theme-blog-data/src/hooks'
@@ -12,8 +11,9 @@ import {
   Icon,
   useTheme,
   Button,
+  jsx,
 } from '@chakra-ui/core'
-import { ColorSwitch } from '../index'
+// import { ColorSwitch } from '../index'
 
 export const Header = () => {
   const { search, menuName } = useThemeOptions()
@@ -42,12 +42,15 @@ export const Header = () => {
     //     <Menu menuName={menuName} />
     //   </div>
     // </header>
-    <Box className="header" as="header" py={4} bg="bgHeader" sx={{}}>
+    <Box className="header" as="header" py={10} sx={{ bg: 'gray.700' }}>
       <Flex maxWidth={1200} ml="auto" mr="auto" justifyContent="space-between">
         {search && <SearchModal />}
         <SiteBranding title={title} />
+        <Button colorScheme="teal" bg="tomato">
+          Button
+        </Button>
       </Flex>
-      <ColorSwitch
+      {/* <ColorSwitch
         sx={{
           position: `absolute`,
           right: [`6%`, `6%`, `2%`],
@@ -56,7 +59,7 @@ export const Header = () => {
             top: [10, 10, 15],
           },
         }}
-      />
+      /> */}
     </Box>
   )
 }

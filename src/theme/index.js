@@ -1,7 +1,4 @@
-import { theme } from '@chakra-ui/core'
-
-import { darken, lighten } from '@theme-ui/color'
-import { Bluetooth } from 'styled-icons/open-iconic'
+import { extendTheme, theme } from '@chakra-ui/core'
 
 const {
   gray,
@@ -28,11 +25,8 @@ const blue = {
   900: '#00141a',
 }
 
-export const customTheme = {
-  ...theme,
-
+export const customTheme = extendTheme({
   colors: {
-    ...theme.colors,
     background: blue[800],
     text: blue[50],
     primary: teal[400],
@@ -41,18 +35,19 @@ export const customTheme = {
     highlight: orange[500],
     mutted: gray[100],
     bgHeader: blue[900],
-    modes: {
-      light: {
-        background: blue[50],
-        text: blue[900],
-        bgHeader: blue[800],
-      },
-    },
+    blue,
+    // modes: {
+    //   light: {
+    //     background: blue[50],
+    //     text: blue[900],
+    //     bgHeader: blue[800],
+    //   },
+    // },
   },
-  fonts: {
-    body: 'Roboto',
-    heading: 'Baumans',
-  },
+  // fonts: {
+  //   body: 'Roboto',
+  //   heading: 'Baumans',
+  // },
   gradients: {
     primary: {
       backgroundImage: (t) =>
@@ -73,4 +68,4 @@ export const customTheme = {
     l: { transition: `all .8s ease-in-out` },
     xl: { transition: `all 1s ease-in-out` },
   },
-}
+})

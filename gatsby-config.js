@@ -32,6 +32,14 @@ module.exports = {
     ],
   },
   plugins: [
+    // {
+    //   resolve: 'gatsby-plugin-chakra-ui',
+    //   options: {
+    //     isResettingCSS: true,
+
+    //     isUsingColorMode: false,
+    //   },
+    // },
     {
       resolve: 'gatsby-theme-blog-data',
       options: {
@@ -50,22 +58,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sass',
-    'gatsby-plugin-theme-ui',
-    // {
-    //   resolve: 'gatsby-plugin-chakra-ui',
-    //   options: {
-    //     /**
-    //      * @property {boolean} [isResettingCSS=true]
-    //      * if false, this plugin will not use `<CSSReset />
-    //      */
-    //     isResettingCSS: true,
-    //     /**
-    //      * @property {boolean} [isUsingColorMode=false]
-    //      * if false, this plugin will not use <ColorModeProvider />
-    //      */
-    //     isUsingColorMode: false,
-    //   },
-    // },
+
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
